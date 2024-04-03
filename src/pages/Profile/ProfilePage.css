@@ -1,0 +1,92 @@
+.profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    color: #685454;
+}
+
+.profilepage-content {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.profile-intro-bar {
+    background-color: #685454;
+    color: #f2f2f2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+}
+
+.bar-content {
+    display: flex;
+    align-items: normal;
+    margin-top: 30px;
+}
+
+.profile-picture-container {
+    width: 80px;
+    height: 80px;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+}
+
+.text-based-intros {
+    margin-left: 30px;
+}
+
+.user-bio {
+    font-weight: 200;
+}
+
+.edit-profile-button {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", sans-serif;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 100px;
+    color: #685454;
+    font-weight: bolder;
+    height: 50px;
+}
+
+.edit-profile-button:hover {
+    background-color: #f7fafa;
+}
+
+.edit-profile-button:focus {
+    border-color: #008296;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    outline: 0;
+}
+.my-posts {
+    background-color: #685454a2;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 90%;
+    height: 500px;
+}
