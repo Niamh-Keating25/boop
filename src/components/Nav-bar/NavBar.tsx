@@ -6,7 +6,9 @@ export function NavBar() {
     const navigate = useNavigate();
 
     function handleLogoutRequest() {
-        navigate('/');
+        localStorage.removeItem('jwt-token');
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
     };
 
     return (

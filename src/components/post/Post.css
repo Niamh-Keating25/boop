@@ -1,0 +1,28 @@
+.post-holder {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.post-username {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #685454;
+    font-size: 20px;
+}
+
+.caption-holder {
+    background-color: #e7d6d592;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    color: #685454;
+}
+
+.post-image-holder {
+    display: flex;
+    justify-content: center;
+}

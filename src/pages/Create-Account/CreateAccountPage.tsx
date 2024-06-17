@@ -44,6 +44,7 @@ export function CreateAccountPage() {
                         id="password"
                         value={password}
                         onChange={setPassword}
+                        type="password"
                     />
                     <Input
                         labelText="Email"

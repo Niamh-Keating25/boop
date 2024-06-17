@@ -5,29 +5,30 @@ import { CreateAccountPage } from './pages/Create-Account/CreateAccountPage';
 import { HomePage } from './pages/Home/HomePage';
 import { ProfilePage } from './pages/Profile/ProfilePage';
 import { CreatePostPage } from './pages/Create-post/CreatePostPage';
+import { LoggedInUser } from './api';
 
  
 export type UserAppContext = {
-    user: User;
+    user: LoggedInUser;
   };
-
-  export type User = {
-    username: string;
-    password: string;
-
-  }
   
   const initialContext: UserAppContext = {
     user: {
-      username: '',
-      password: ''
+      blocked: true,
+      confirmed: true,
+      createdAt: '',
+      email: '',
+      id: 1,
+      provider: '',
+      updatedAt: '',
+      username: ''
     },
   };
   
   export const AppContext = createContext<UserAppContext>(initialContext);
   
   type Props = {
-    user: User;
+    user: LoggedInUser;
   };
   
   const AppRouter: React.FC<Props> = ({ user }) => {
@@ -40,9 +41,7 @@ export type UserAppContext = {
       <AppContext.Provider value={context}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/create-account" element={<CreateAccountPage />} />
-            <Route path="/home" element={<HomePage />} />
+            <Route path="*" element={<HomePage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/create-post" element={<CreatePostPage />} />
           </Routes>

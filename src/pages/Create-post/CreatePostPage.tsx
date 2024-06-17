@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react"
+import { useState, FormEvent, useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import { createNewPost, uploadImage } from "../../api";
 import Input from "../../components/Input/Input"
@@ -6,28 +6,28 @@ import { NavBar } from "../../components/Nav-bar/NavBar";
 import FileUpload from "../../components/File-upload/FileUpload";
 import "./CreatePostPage.css";
 import axios from "axios";
+import { AppContext } from "../../AppRouter";
 
 
 
 export function CreatePostPage() {
-
+    const ctx = useContext(AppContext);
     const [caption, setCaption] = useState('');
     const [photo, setPhoto] = useState<File>();
     const [createPostError, setCreatePostError] = useState(false);
 
     const navigate = useNavigate();
-
+    console.log(ctx.user)
     const handleCreatePostRequest = async (e: FormEvent) => {
         e.preventDefault();
         if (!photo) {
             return
         }
         const fileId = await uploadImage(photo);
-
-        const dataToSend = { caption, photo: fileId }
+        
 
         try {
-            await createNewPost(dataToSend);
+            await createNewPost({ Caption: caption, Image: fileId as string, user: ctx.user.id });
             navigate('/home')
         } catch (error) {
             setCreatePostError(true);
